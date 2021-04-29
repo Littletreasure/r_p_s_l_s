@@ -18,21 +18,21 @@ class Game extends Component {
   gameChoice(choice) {
     const num = Math.floor(Math.random() * 5);
     const comp = this.state.choices[num];
-    const text = result(choice, comp);
+    const resultObj = result(choice, comp);
     this.setState({
       playerChoice: choice,
       computerChoice: this.state.choices[num],
-      text: text,
+      text: resultObj.text,
     });
   }
 
   render() {
-    const { choices, playerChoice, computerChoice, text } = this.state;
+    const { choices, playerChoice, computerChoice, playerScore, computerScore, text } = this.state;
     return (
       <div>
         <div className="gameArea">
           <h2>Please make a choice</h2>
-          <div className="choices">
+          <div className="options">
             {choices.map((choice) => {
               return (
                 <img
@@ -49,6 +49,8 @@ class Game extends Component {
         <Score
           playerChoice={playerChoice}
           computerChoice={computerChoice}
+          playerScore={playerScore}
+          computerScore={computerScore}
           text={text}
         />
       </div>

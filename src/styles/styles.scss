@@ -1,3 +1,5 @@
+
+
 .header {
   display: flex;
   flex-direction: column;
@@ -16,18 +18,36 @@
   h2 {
     margin: 0 0 20px 0;
   }
+  .image {
+    width: 100px;
+    height: 100px;
+  }
 }
 
-.image {
-  width: 100px;
-  height: 100px;
-}
-
-.score {
+.result {
   border: 1px solid black;
   border-top: 0;
+  padding: 20px;
   p {
     margin: 0;
     padding: 10px 0;
+  }
+  // .choices {
+  // }
+  .scoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    .score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .scoreNum {
+      border: 1px solid black;
+      padding: 5px;
+      align-self: center;
+    }
   }
 }

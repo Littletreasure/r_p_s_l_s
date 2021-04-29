@@ -33,18 +33,54 @@
   margin: 0 0 20px 0;
 }
 
-.image {
+.gameArea .image {
   width: 100px;
   height: 100px;
 }
 
-.score {
+.result {
   border: 1px solid black;
   border-top: 0;
+  padding: 20px;
 }
 
-.score p {
+.result p {
   margin: 0;
   padding: 10px 0;
+}
+
+.result .scoreContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
+}
+
+.result .scoreContainer .score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result .scoreContainer .scoreNum {
+  border: 1px solid black;
+  padding: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=styles.css.map */
