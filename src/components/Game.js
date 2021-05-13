@@ -19,6 +19,15 @@ class Game extends Component {
     const num = Math.floor(Math.random() * 5);
     const comp = this.state.choices[num];
     const resultObj = result(choice, comp);
+    if (resultObj.winner == "computer") {
+      this.setState(prevState => ({
+        computerScore: prevState.computerScore + 1
+    }))
+  } else {
+      this.setState((prevState) => ({
+        playerScore: prevState.playerScore + 1
+      }));
+    }
     this.setState({
       playerChoice: choice,
       computerChoice: this.state.choices[num],
@@ -26,10 +35,21 @@ class Game extends Component {
     });
   }
 
+  reset() {
+    this.setState({ playerChoice: "", computerChoice: "", playerScore: 0, computerScore: 0, text: "" });
+  }
+
   render() {
-    const { choices, playerChoice, computerChoice, playerScore, computerScore, text } = this.state;
+    const {
+      choices,
+      playerChoice,
+      computerChoice,
+      playerScore,
+      computerScore,
+      text,
+    } = this.state;
     return (
-      <div>
+      <div className='container'>
         <div className="gameArea">
           <h2>Please make a choice</h2>
           <div className="options">
@@ -52,7 +72,9 @@ class Game extends Component {
           playerScore={playerScore}
           computerScore={computerScore}
           text={text}
+          reset={this.reset}
         />
+        <button onClick={() => this.reset()}>Reset</button>
       </div>
     );
   }

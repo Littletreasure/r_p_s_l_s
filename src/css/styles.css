@@ -24,8 +24,12 @@
   font-size: 20px;
 }
 
-.gameArea {
+.container {
+  padding-bottom: 30px;
   border: 1px solid black;
+}
+
+.gameArea {
   padding: 20px;
 }
 
@@ -39,14 +43,17 @@
 }
 
 .result {
-  border: 1px solid black;
-  border-top: 0;
+  border-top: 1px solid black;
   padding: 20px;
 }
 
 .result p {
   margin: 0;
   padding: 10px 0;
+}
+
+.result .choices {
+  min-height: 120px;
 }
 
 .result .scoreContainer {
@@ -57,9 +64,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 0 20px;
 }
 

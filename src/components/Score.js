@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 class Score extends Component {
+
+  
   render() {
     const {
       playerChoice,
@@ -8,6 +10,7 @@ class Score extends Component {
       playerScore,
       computerScore,
       text,
+      reset
     } = this.props;
     return (
       <div className="result">
@@ -29,7 +32,6 @@ class Score extends Component {
             </div>
           </div>
         </div>
-        <p>reset</p>
       </div>
     );
   }
